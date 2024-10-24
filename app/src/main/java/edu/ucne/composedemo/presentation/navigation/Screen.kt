@@ -16,8 +16,12 @@ sealed class Screen {
     @Serializable
     data object AnyDeskLogList : Screen()
     @Serializable
-    data object SuplidorGastosList : Screen()
+    data object GastosList : Screen()
+
+    @Serializable
     data object CobroList : Screen()
-
-
+    @Serializable
+    data object TiposSoportesList : Screen()
+    @Serializable
+    data object SuplidoresGastosList : Screen()
 }

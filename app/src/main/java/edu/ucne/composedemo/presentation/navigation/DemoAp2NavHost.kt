@@ -15,8 +15,10 @@ import edu.ucne.composedemo.presentation.cliente.ClienteListScreen
 import edu.ucne.composedemo.presentation.cobro.CobroListScreen
 import edu.ucne.composedemo.presentation.components.DrawerMenu
 import edu.ucne.composedemo.presentation.equiposanydesk.EquipoAnyDeskListScreen
+import edu.ucne.composedemo.presentation.gastos.GastosListScreen
 import edu.ucne.composedemo.presentation.sistema.SistemaListScreen
 import edu.ucne.composedemo.presentation.suplidorGastos.SuplidorGastosListScreen
+import edu.ucne.composedemo.presentation.tipossoportes.TiposSoportesListScreen
 import kotlinx.coroutines.launch
 
 @Composable
@@ -103,8 +105,36 @@ fun DemoAp2NavHost(
                     }
                 )
             }
-            composable<Screen.SuplidorGastosList> {
-                SuplidorGastosListScreen(
+            composable<Screen.GastosList> {
+                GastosListScreen(
+                    onDrawer = {
+                        scope.launch {
+                            drawerState.open()
+                        }
+                    }
+                )
+            }
+            composable<Screen.CobroList> {
+                CobroListScreen(
+                    onDrawer = {
+                        scope.launch {
+                            drawerState.open()
+                        }
+                    }
+                )
+            }
+
+            composable<Screen.TiposSoportesList> {
+                TiposSoportesListScreen(
+                    onDrawer = {
+                        scope.launch {
+                            drawerState.open()
+                        }
+                    }
+                )
+            }
+            composable<Screen.SuplidoresGastosList> {
+                SuplidorGastosListScreen (
                     onDrawer = {
                         scope.launch {
                             drawerState.open()
@@ -112,15 +142,6 @@ fun DemoAp2NavHost(
                     },
                     onGoCreate = {}
                 )
-                composable<Screen.CobroList> {
-                    CobroListScreen(
-                        onDrawer = {
-                            scope.launch {
-                                drawerState.open()
-                            }
-                        }
-                    )
-                }
             }
         }
     }
